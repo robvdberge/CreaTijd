@@ -4,85 +4,220 @@
 body{
 	margin: 0;
 	padding: 0;
+	font-family: 'Indie Flower', cursive;
 }
 @font-face {
 	font-family: inkFree;
 	src: url(/scripts/Inkfree.woff);
-  }
+}
+
 /*-----------------------------------navigatie------------------*/
 nav{
 	display: inline-block;
-	background-color: #eeeeee;
-	width: 100%;
+	position:absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	background-color: #bbbbbb;
+	opacity: .75;
+	z-index: 2;
+	height: 55px;
+	border-bottom: 3px ridge #bbbbbb;
 }
 .logo img{
-	margin-left: 10px;
+	position: absolute;
+	left: 10px;
 	width: 50px;
 	height: 50px;
 }
-nav i{
-	float: right;
+#mob-menu__btn{
+	position: absolute;
+	top: 0px;
+	right: 1.5em;
 	font-size: 2em;
-	margin: 10px 20px;
+	margin: 10px 5px 10px;
+	color: #3b3939;
+	z-index: 2;
+}
+#mob-set__btn{
+	position: absolute;
+	top: 0px;
+	right: 0.25em;
+	font-size: 2em;
+	margin: 10px 1px 10px;
+	color: #3b3939;
+	z-index: 2;
+}
+.nav-lijst{
+	display: flex;
+	flex-direction: column;
+	position: absolute;
+	list-style: none;
+	top: 0em;
+	left: 0;
+	margin: 0;
+	padding: 0;
+	height: 100vh;
+	width: 95vw;
+	justify-content: space-around;
+	transition: ease-in-out .5s ;
+}
+nav .nav-lijst li{
+	display: flex;
+	width: 95vw;
+	height: 16.7vh;
+	background-color: #3b3939;
+	justify-content: space-around;
+	border-bottom: 1px solid black;
+	z-index: 1;
+}
+nav .nav-lijst li a{
+	position: relative;
+	text-decoration: none;
+	/* width: 100%; */
+	transform: translateY(40%);
+	color: #dddddd;
+	cursor: pointer;
+	font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+	font-size: 5vh;
+}
+nav .nav-aanmeld-btn{
+	position: absolute;
+	top: .55em;
+	right: 6.75em;
+	height: 2.9em;
+	padding: 0 1em;
+	font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+	z-index: -1;
+}
+/*--------melding venster onder navbar-----*/
+.meldingContainer{
+	display: none;
+	position: relative;
+	top: 55px;
+	text-align: center;
+	height: 1.75em;
+	background-color: #bbbbbb;
+	border-bottom: 1px solid rgb(104, 103, 103);
+	font-size: 1.3em;
+}
+.melding{
+	background-color: transparent;
+	text-shadow: 0px 0px 5px white;
+}
+.success{
+	color: green;
+}
+.error{
+	color: red;
+}
+/*---------------------groepenlijst submenu--------------*/
+nav .groepen-lijst{
+	display: none;
+	position: absolute;
+	flex-direction: column;
+	top: 70%;
+	right: 2vw;
+	width: 40vh;
+}
+nav .nav-lijst li .groepen-lijst li{
+	padding: 0px;
+	height: 7vh;
+	width: 100%;
+	border: 1px solid black;
+}
+nav .groepen-lijst li a{
+	font-size: 3.5vh;
 }
 /*-----------------------------------header----------------------------*/
 header{
+	position: relative;
 	display: block;
 	width: 100%;
-	/* height: 90vh; */
 }
 .carrousel{
 	display: block;
+	/* height: 75vw;  */
 }
-.carrousel ul{
+#fotolijst{
 	list-style: none;
 	margin: 0;
 	padding: 0;
+	height: 65vw;
+	overflow: hidden;
 }
-.carrousel li img{
+.foto img{
 	display: none;
 	position: relative;
-	width: 100%;
+	width: 110%;
+	height: 100%;
 }
-.carrousel li .active{
+.foto .active{
 	display: block;
 }
 .carrousel .button-links{
 	position: absolute;
-	font-size: 2em;
-	left: .5em;
-	top: 50vw;
+	font-size: 2.5em;
+	left: .2em;
+	top: 50%;
 	transform: translateY(-50%);
 	z-index: 2;
-	opacity: .6;
+	opacity: .7;
+	text-shadow: 0px 0px 5px #ffffff;
 }
 .carrousel .button-rechts{
 	position: absolute;
-	font-size: 2em;
-	right: .5em;
-	top: 50vw;
+	font-size: 2.5em;
+	right: .2em;
+	top: 50%;
 	transform: translateY(-50%);
 	z-index: 2;
-	opacity: .6;
+	opacity: .7;
+	text-shadow: 0px 0px 5px #ffffff;
 }
 .header-title{
 	position: absolute;
 	text-align: center;	
-	top: 30vw;
+	top: 25%;
 	left: 50%;
 	transform: translateX(-50%);
-	font-size: 2.2em;
+	font-size: 1em;
 	color: #28aaf4;
 	font-family: 'Indie Flower', cursive;
 }
 .header-title span{
-	font-size: 18px;
+	font-size: 5vw;
 	text-shadow: 5px 5px 5px #666666;
 }
 .header-title h1{
 	margin: 0;
 	padding: 0;
+	font-size: 20vw;
 	text-shadow: 5px 5px 5px #666666;
+}
+.rondje-rechts{
+	background-color: white;
+	width: 2.5em;
+	height : 2.5em;
+	position: absolute;
+	right: 1.5em;
+	top: 50%;
+	transform: translateY(-50%);
+	z-index: 1;
+	opacity: .6;
+	border-radius: 50%;
+}
+.rondje-links{
+	background-color: white;
+	width: 2.5em;
+	height : 2.5em;
+	position: absolute;
+	left: 1.5em;
+	top: 50%;
+	transform: translateY(-50%);
+	z-index: 1;
+	opacity: .6;
+	border-radius: 50%;
 }
 /*-----------------------------Groepen sectie-----------------------*/
 .groepen-container{
@@ -90,8 +225,8 @@ header{
 	flex-direction: row;
 	margin: 0;
 	padding: 0;
-	height: 100vw;
-	width: 100vw;
+	/* height: 100vw; */
+	width: 100%;
 }
 .groep{
 	font-family: inkFree;
@@ -106,7 +241,7 @@ header{
 	height: 100%;
 	opacity: .4;
 }
-.groep p{
+.groeptekst{
 	font-size: 1.5em;
 	position: relative;
 	top: -3.5em;
@@ -114,8 +249,14 @@ header{
 .groep img:hover{
 	opacity: 1;
 }
+.groep a{
+	text-decoration: none;
+	height: 100%;
+}
 /*-----------------------------welkomst sectie-----------------------------*/
 .welkomst{
+	position: relative;
+	top: 3em;
 	padding: 3em;
 	font-family: inkFree;
 	max-width: 300px;
@@ -131,18 +272,25 @@ header{
 	transform: translateX(-50%);
 	background-color: #7c23f4;
 	color: #fff;
+	margin-bottom: 2em;
 
+}
+.welkomst .welkomst-image{
+	display: none;
+}
+.welkomst .kwasten{
+	display: none;
 }
 /*----------------------------quote section------------------------------------*/
 .quote{
-	
-	padding: 2em;
+	padding: 3em 2em 2em 2em;
 	border-top: 2px solid black;
 	border-bottom: 2px solid black;
 }
 .quote-container{
 	max-width: 350px;
 	margin: 0 auto;
+	border: none;
 }
 .quote .quote-logo{
 	font-size: 4em;
@@ -156,23 +304,33 @@ header{
 	font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 	font-size: 1.5em;
 }
+.quote p:last-of-type{
+	text-align: right;
+}
 .quote p span{
 	position: relative;
-	left: 5em;
+	right: 0;
 }
 /*--------------------------------projecten-------------------------------------*/
-.projecten{
-	height: 100vw;
-	width: 100vw;
+.projecten .projecten-titel{
+	font-size: 5vw;
+	color: #3b3939;
+	text-align: center;
+	font-family: 'Indie Flower', cursive;
+	width: 100%;
 }
-.projecten .project{
+.projecten-cont{
+	height: 100vw;
+	width: 100%;
+}
+.projecten-cont .project{
 	position: relative;
 	width: 50%;
 	height: 50%;
 	float: left;
 	z-index: 1;
 }
-.projecten img{
+.projecten-cont img{
 	width: 100%;
 	height: 100%;
 }
@@ -183,7 +341,7 @@ header{
 	border-radius: 5px;
 }
 .project:last-of-type img{
-	border-radius: 5px;
+	border-radius: 50%;
 }
 .project:hover, .project:focus{
 	z-index: 5;
@@ -194,27 +352,27 @@ footer{
 	background-color: #3b3939;
 	width: 100%;
 	font-size: 1.5em;
+	border-top: groove 2px #3b3939;
 }
 .footer-container{
 	text-align: center;
 	width: 100%;
 }
 .footer-tekst{
-	display: flex;
-	flex-direction: column;
+	font-size : 3.5vw;
+	font-family: 'Indie Flower', cursive;
 }
 .footer-social{
 	padding: 1em;
+	padding-bottom: 2.5em;
 }
 footer .footer-tekst-groepen{
 	display: flex;
 	color: #fff;
 	text-decoration: none;
 	margin: 1.6em;
+	padding-top: .5em;
 	justify-content: space-between;
-}
-.footer-tekst-groepen a{
-	/* padding: 10px; */
 }
 footer .footer-nav{
 	display: flex;
@@ -223,11 +381,480 @@ footer .footer-nav{
 	margin: 1.6em;
 	justify-content: space-between;
 }
-.footer-nav a{
-	/* padding: 10px; */
-}
 footer a{
 	color: #fff;
 	text-decoration: none;
 }
+footer a:hover{
+	cursor: pointer;
+	color: rgb(184, 70, 174);
+}
+.footer-map{
+	width: 100%;
+	padding: 0 10px 5px;
+}
+.footer-map img{
+	width: 100%;
+	height: 30vw;
+	object-fit: cover;
+	padding: 0;
+}
+/*------------------------------------verschillende groeperingen----------------------*/
+.menu-hidden{
+	position: absolute;
+	left: -110%;
+	color: white;
+}
+.streep{
+	text-align: center;
+}
+.streep::before{
+	content: '';
+	display: inline-block;
+	position: relative;
+	top: -.25em;
+	left: -.5em;
+	border-bottom: 2px solid #3b3939;
+	width: 15vw;
+}
+.streep::after{
+	content: '';
+	display: inline-block;
+	position: relative;
+	top: -.25em;
+	right: -.5em;
+	border-bottom: 2px solid #3b3939;
+	width: 15vw;
+}
+/*------------------------------------@Media queries---------------------------------!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+@media all and (min-width: 800px){
+	/*-------------------------------800px nav------------------------------*/
+	#mob-menu__btn, #mob-set__btn{
+		display: none;
+	}
+	.logo{
+		margin-right: 0; 
+	}
+	nav{
+		position: absolute;
+		opacity: .8;
+		z-index: 2;
+		width: 100%;
+	}
+	.nav-lijst{
+		position: relative;
+		top: .9em;
+		flex-direction: row;
+		height: 1.6em;
+		width: 88vw;
+		margin-left: 25px;
+		text-align: center;
+		justify-items: center;
+		transition: 0s;
+	}
+	nav .nav-lijst li{
+		display: inline;
+		background-color: transparent;
+		border: none;
+	}
+	nav .nav-lijst li a{
+		position: relative;
+		text-decoration: none;
+		color: white;
+		font-size: 1.45vw;
+		border-bottom: none;
+		text-shadow: 0px 2px 3px black;
+	}
+	.nav-lijst a:hover{
+		color: #e25fff;
+	}
+	.menu-hidden{
+		left:0;
+	}
+	.hidden{
+		display: none;
+	}
+	nav .nav-aanmeld-btn{
+		position: absolute;
+		top: 1px;
+		right: 1px;
+		height: 100%;
+		font-size: 1.55vw;
+	}
+	.meldingContainer{
+		top: 29px;
+	}
+	/*-----------------navigatie groepen-lijst 800px--------------------------*/
+	nav .nav-lijst li .groepen-lijst{
+		top: 6.5vh;
+		right: -0.5em;
+		width: 20vw;
+	}
+	.groepen-lijst-container{
+		display: flex;
+		flex-direction: column;
+	}
+	nav .nav-lijst li .groepen-lijst li{
+		padding-top: .5em;
+		background-color: #969191;
+		
+	}
+	nav .nav-lijst li .groepen-lijst li a{
+		width: 25vw;
+	}
+	/*---------------------------------------800px header---------------------*/
+	.header-title{
+		top: 15vw;
+	}
+	.carrousel .button-links{
+		top: 50%;
+	}
+	.carrousel .button-rechts{
+		top: 50%;
+	}
+}
+@media all and (min-width: 800px){
+	/*-------------------------------------800px groepen-----------------------*/
+	.groepen-container{
+		/* height: 20vw;
+		width: 100vw; */
+		height: 20vw;
+		position: relative;
+		top: -10vw;
+		display: flex;
+		justify-content: space-around;
+	}
+	.groep{
+		width: 20%;
+		height: 20vw;
+		z-index: 3;
+	}
+	.groep img{
+		width: 100%;
+		height: 100%;
+		opacity: 1;
+	}
+	.groep p{
+		color: #ffffff;
+		font-size: 1.5em;
+		position: relative;
+		top: -3.5em;
+		text-shadow: 1px 1px 0px #000000;
+	}
+}
+	/*-------------------------------800 px welkomst---------------------------------*/
+@media all and (min-width: 800px){
 
+	.welkomst{
+		top: -10vw;
+		display: flex;
+		position: relative;
+		width: 100%;
+		padding: 0;
+		margin: 0 auto;
+		max-width: 90vw;
+		justify-content: space-around;
+	}
+	.welkomst .welkomst-tekst{
+		margin-bottom: 0;
+		max-width: 60vw;
+		padding: 3em;
+	}
+	.welkomst .aanmeld-btn, p{
+		font-size: 3vw;
+		
+	}
+	.welkomst .welkomst-image{
+		display: flex;
+		align-content: space-around;
+		padding-top: 10vw;
+	}
+	.welkomst .kwasten{
+		display: block;
+		height: 60vw;
+	}/*----------------------------------------800 px Quote section-----------------------------*/
+	.quote{
+		position: relative;
+		top: -4em;
+		border: none;
+	}
+	.quote-container{
+		max-width: 50vw;
+		border-style: double;
+		border-color: black;
+		border-width: 5px;
+	}
+	.quote p{
+		padding: 0 1em;
+		font-size: 4vw;
+	}
+}
+@media all and (min-width: 800px){
+	/*------------------------------------800px Projecten section---------------------------------*/
+	.projecten-cont{
+		display: flex;
+		justify-content: space-around;
+		height: 100%;
+		width: 100%;
+		margin-bottom: 4em;
+	}
+	.projecten-cont .project{
+		width: 18vw;
+		height: 18vw;
+	}
+	.projecten-cont img{
+		border-radius: 10px;
+	}
+	.project:last-of-type{
+		top: 0;
+		left: 0;
+		border-radius: 0;
+	}
+	.project:last-of-type img{
+		border-radius: 10px;
+	}
+	.project:hover, .project:focus{
+		opacity: .7;
+	}
+}
+/*--------------------------------------vervolg paginas---------------------------------*/
+/*------------------------knutselmiddag pagina-------------------------------*/
+/*------------------------------------main-------------------------*/
+main{
+	display: block;
+	position: relative;
+	padding: 3em 3em;
+	font-family: 'Indie Flower', cursive;
+}
+.main-title{
+	text-align: center;	
+	position: relative;
+	top: 5vw;
+	font-size: 1em;
+	width: 100%;
+	color: #28aaf4;
+	font-family: 'Indie Flower', cursive;
+	background-image: linear-gradient(white, rgb(152, 178, 250), white);
+	padding-top: 58px;
+}
+.main-title__title{
+	margin: 0;
+	padding: 0;
+	font-size: 10vw;
+	text-shadow: 5px 5px 5px #666666;
+}
+.main-title__span{
+	font-size: 4vw;
+	text-shadow: 5px 5px 5px #666666;
+}
+main h2{
+	padding-top: 1em;
+	font-size: 3vw;
+}
+main h3{
+	font-size: 2.8vw;
+}
+.sfeer-fotos img{
+	width: 18%;
+	height: 10vw;
+}
+.onderwerpen-fotos img{
+	width: 32%;
+	height: 18vw;
+}
+.themas-fotos img{
+	width: 100%;
+}
+/*----------------------------------prijzen pagina--------------------------*/
+.prijzen-title{
+	padding-top: 2em;
+	font-size: 3vw;
+	font-family: 'Indie Flower', cursive;
+}
+.prijzen table{
+	font-size: 2vw;
+	position: relative;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 75%;
+	padding-bottom: 3em;
+	font-family: 'Indie Flower', cursive;
+}
+.prijzen table tr:nth-child(even){
+	background-color: #eeeeee;
+}
+/*-------------------contactinformatie pagina----------------------------*/
+.CTA{
+	margin-top: 3em;
+}
+.CTA button{
+	position: relative;
+	left: 50%;
+	transform: translatex(-50%);
+	font-family: 'Indie Flower', cursive;
+	font-size: 4vw;
+	padding: .5em 2em;
+	background-color: #7c23f4;
+	color: #ffffff;
+	box-shadow: 5px 5px 10px #444444;
+}
+.info-tabel{
+	font-size: 2vw;
+	position: relative;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 75%;
+}
+.info-tabel tr:nth-child(even){
+	background-color: #eeeeee;
+}
+.profiel-foto{
+	width: 20vw;
+	float: left;
+	margin-right: 1em;
+}
+.modal-contact{
+	display: none;
+	position: absolute;
+	top: 2.5vw;
+	left: 2.5vh;
+	width: 90vw;
+	height: 90vh;
+	padding: 5vw;
+	background-image: linear-gradient(135deg, rgb(197,197,197), lightblue);
+	border-radius: 10px;
+	z-index: 100;
+	border: 6px outset darkgrey;
+}
+.modal-contact .modal-contact-tekstinput{
+	font-size: 4vh;
+	padding: 1vw 5vw;
+	width: 70vw;
+	margin: 2.5vh 0px;
+	border-radius: 5px;
+}
+.modal-checkbox{
+	width: 1em;
+}
+.modal-contact button{
+	font-size: 3.5vw;
+	padding: 1vw 5vw;
+	width: 35.25vw;
+	margin: .25em;
+	border-radius: 5px;
+}
+.modal-contact textarea{
+	height: 8em;
+	overflow: auto;
+}
+.required{
+	color: red;
+	font-size: 2em;
+}
+.info-verplicht{
+	color: red;
+	font-size: 3.5vw;
+}
+/*----------------------------hulpouders pagina---------------------------*/
+.inleiding-tekst img{
+	float: right;
+	width: 25vw;
+	border-radius: 10px;
+}
+/*------------------------media queries all pages-----------------------------------------*/
+@media all and (min-width: 800px){
+	main{
+		padding: 5.5em 10vw;
+	}
+	.main-title{
+		padding-top: 0px;
+	}
+	.modal-contact{
+		padding: 2vw 4vw;
+		width: 95vw;
+	}
+	.modal-contact .modal-contact-tekstinput{
+		font-size: 1.8vw;
+		padding: 1vw 2vw;
+		margin: 2.5vh 0px;
+		width: 80vw;
+	}
+	.modal-contact button{
+		font-size: 1.8vw;
+		padding: 1vw 5vw;
+		margin: .25em;
+		width: 39.5vw;
+	}
+	.modal-contact textarea{
+		height: 8em;
+	}
+	.info-verplicht{
+		font-size: 1.5vw;
+		position: absolute;
+		left: 50%;
+	}
+}
+/*----------------------------inlog form sectie------------------------------*/
+.inlog-form{
+	text-align: center;
+	padding-top: 5em;
+}
+#loginForm{
+	width: 15em;
+	margin: 0 auto;
+	font-size: 20px;
+}
+#loginForm input{
+	font-size: 20px;
+	margin: .5em;
+	padding: .25em .5em;
+	border-radius: 3px;
+}
+#loginForm button{
+	font-size: 20px;
+	padding: .25em 2em;
+	margin: .5em;
+}
+#loginForm a{
+	color: blue;
+}
+.login-form__link{
+	font-size: 1.5em;
+}
+/*----------------------------------------error messages-----------------------------*/
+.error p{
+	font-size: 2em;
+	color: red;
+	font-weight: bold;
+}
+/*-------------------------------------instellingen pagina-------------------------------*/
+#hoofdinstelling{
+	text-align: right;
+	margin: 2em;
+	font-size: 1.3rem;
+	padding-top: 3em;
+}
+#hoofdinstelling input{
+	margin: .5em;
+	font-size: 1.1rem;
+	width: 12em;
+}
+#hoofdinstelling button{
+	margin: .5em;
+	font-size: 1rem;
+	height: 3em;
+	padding: 5px 15px;
+}
+#hoofdinstelling #naamVeld{
+	background-color: #ddd;
+}
+#hoofdinstelling fieldset{
+	float: left;
+	width: 370px;
+	margin: 1em;
+	height: 350px;
+	overflow: auto;
+}
+.container{
+	height: 100%;
+}

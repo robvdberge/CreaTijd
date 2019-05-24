@@ -1,0 +1,88 @@
+* {
+	box-sizing: border-box;
+}
+body{
+	text-align: center;
+}
+/*--------------------------header---------------------------------*/
+header{
+	display: flex;
+	padding: .25em;
+	flex-direction: row;
+	border-bottom: 1px solid black;
+	justify-content: flex-end;
+}
+/*--------------------------nav-------------------------------------*/
+nav{
+	display: flex;
+	flex-direction: row;
+	margin-right: 3em;
+	padding: .25em;
+}
+nav button{
+	margin-left: 2em;
+}
+nav a{
+	text-decoration: none;
+	font-weight: bold;
+	color: lightseagreen;
+	margin-right: 1.5em;
+}
+nav a:last-of-type{
+	margin-right: 0;
+}
+nav a:hover{
+	color: green;
+}
+/*------------------------------main content-----------------------*/
+#mainContainer{
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+}
+/*-------------------------aanmeld formulier--------------------------------*/
+#loginForm{
+	width: 15em;
+	margin: 0 auto;
+	font-size: 20px;
+}
+#loginForm input{
+	font-size: 20px;
+	margin: .5em;
+	border-radius: 3px;
+}
+#loginForm button{
+	font-size: 20px;
+	padding: .25em 2em;
+	margin: .5em;
+}
+#loginForm a{
+	color: blue;
+}
+/*----------------------------------------error messages-----------------------------*/
+.error p{
+	font-size: 2em;
+	color: red;
+	font-weight: bold;
+}
+/*-------------------------------------instellingen pagina-------------------------------*/
+#hoofdinstelling{
+	text-align: right;
+	margin: 2em;
+	width: 18em;
+	font-size: 1.3rem;
+}
+#hoofdinstelling input{
+	margin: .5em;
+	font-size: 1.1rem;
+	width: 12em;
+}
+#hoofdinstelling button{
+	margin: .5em;
+	font-size: 1rem;
+	height: 3em;
+	padding: 5px 15px;
+}
+#hoofdinstelling #naamVeld{
+	background-color: #ddd;
+}
